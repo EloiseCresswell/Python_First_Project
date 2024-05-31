@@ -1,29 +1,34 @@
 import numpy as np
 import random
 
-user_action = input("Enter a choice (rock, paper, scissors): ")
+while True:
 
-print ('user choice was ' + user_action)
+    user_action = input("Enter a choice (rock, paper, scissors): ")
 
-number = np.random.randint(1,4)
+    print ('user choice was ' + user_action)
 
-if number == 1 :
-    computer_Choice = "rock"
-elif number == 2 :
-    computer_Choice = "paper"
-else :
-    computer_Choice = "scissors"
+    number = np.random.randint(1,4)
 
-print ('computer choice was ' + computer_Choice)
+    if number == 1 :
+        computer_Choice = "rock"
+    elif number == 2 :
+        computer_Choice = "paper"
+    else :
+        computer_Choice = "scissors"
 
-if user_action == computer_Choice :
-    print ("It's a drawer!")
-elif user_action == 'rock' and computer_Choice == 'scissors' : 
-    print ('You win!')
-elif user_action == 'paper' and computer_Choice == 'rock' :
-    print ('You win!')
-elif user_action == 'scissors' and computer_Choice == 'paper' :
-    print ('You win!')
-else :
-    print ('Computer wins!')
+    print ('computer choice was ' + computer_Choice)
 
+    if user_action == computer_Choice :
+        print ("It's a drawer!")
+    elif user_action == 'rock' and computer_Choice == 'scissors' : 
+        print ('You win!')
+    elif user_action == 'paper' and computer_Choice == 'rock' :
+        print ('You win!')
+    elif user_action == 'scissors' and computer_Choice == 'paper' :
+        print ('You win!')
+    else :
+        print ('Computer wins!')
+
+    play_again = input("Play again? (y/n): ")
+    if play_again.lower() != "y":
+            break
